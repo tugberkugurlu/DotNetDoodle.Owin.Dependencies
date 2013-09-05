@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies.Adapters.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies.Autofac", "src\Owin.Dependencies.Autofac\Owin.Dependencies.Autofac.csproj", "{95885B15-F24B-4A49-B31A-CFFAC62ED2C7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{34015A88-7C6B-4F77-BBD4-D60BB9A3EB19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
