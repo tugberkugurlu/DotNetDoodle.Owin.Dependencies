@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{93A4D7
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies.Adapters.WebApi", "src\Owin.Dependencies.Adapters.WebApi\Owin.Dependencies.Adapters.WebApi.csproj", "{F1ABE80C-CFCE-40E5-BB54-EF0B9CD5C127}"
@@ -17,6 +16,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies.Autofac", "src\Owin.Dependencies.Autofac\Owin.Dependencies.Autofac.csproj", "{95885B15-F24B-4A49-B31A-CFFAC62ED2C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{34015A88-7C6B-4F77-BBD4-D60BB9A3EB19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".samples", ".samples", "{A6BBFA69-5E95-4284-8E5B-B0CB28644F61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies.Sample", "samples\Owin.Dependencies.Sample\Owin.Dependencies.Sample.csproj", "{01D9AD77-F714-4686-8C78-FE6443C4A139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies.Sample.Host", "samples\Owin.Dependencies.Sample.Host\Owin.Dependencies.Sample.Host.csproj", "{D20A708E-6DD0-4E9F-810E-24C43F55A6F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,8 +41,20 @@ Global
 		{95885B15-F24B-4A49-B31A-CFFAC62ED2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95885B15-F24B-4A49-B31A-CFFAC62ED2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95885B15-F24B-4A49-B31A-CFFAC62ED2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D9AD77-F714-4686-8C78-FE6443C4A139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D9AD77-F714-4686-8C78-FE6443C4A139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D9AD77-F714-4686-8C78-FE6443C4A139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D9AD77-F714-4686-8C78-FE6443C4A139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D20A708E-6DD0-4E9F-810E-24C43F55A6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D20A708E-6DD0-4E9F-810E-24C43F55A6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D20A708E-6DD0-4E9F-810E-24C43F55A6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D20A708E-6DD0-4E9F-810E-24C43F55A6F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{01D9AD77-F714-4686-8C78-FE6443C4A139} = {A6BBFA69-5E95-4284-8E5B-B0CB28644F61}
+		{D20A708E-6DD0-4E9F-810E-24C43F55A6F3} = {A6BBFA69-5E95-4284-8E5B-B0CB28644F61}
 	EndGlobalSection
 EndGlobal
