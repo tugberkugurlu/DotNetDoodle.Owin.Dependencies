@@ -16,12 +16,25 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies.Autofac", "src\Owin.Dependencies.Autofac\Owin.Dependencies.Autofac.csproj", "{95885B15-F24B-4A49-B31A-CFFAC62ED2C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{34015A88-7C6B-4F77-BBD4-D60BB9A3EB19}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\build.cmd = scripts\build.cmd
+		scripts\build.ps1 = scripts\build.ps1
+		scripts\Owin.Dependencies.msbuild = scripts\Owin.Dependencies.msbuild
+		scripts\Owin.Dependencies.properties = scripts\Owin.Dependencies.properties
+		scripts\publish.ps1 = scripts\publish.ps1
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".samples", ".samples", "{A6BBFA69-5E95-4284-8E5B-B0CB28644F61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies.Sample", "samples\Owin.Dependencies.Sample\Owin.Dependencies.Sample.csproj", "{01D9AD77-F714-4686-8C78-FE6443C4A139}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies.Sample.Host", "samples\Owin.Dependencies.Sample.Host\Owin.Dependencies.Sample.Host.csproj", "{D20A708E-6DD0-4E9F-810E-24C43F55A6F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{2727EAAC-727F-4428-A2E7-3E77981129B1}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
