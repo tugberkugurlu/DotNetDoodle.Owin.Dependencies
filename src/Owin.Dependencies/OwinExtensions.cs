@@ -14,7 +14,7 @@ namespace Owin
     {
         public static IAppBuilder UseDependencyResolver(this IAppBuilder app, IOwinDependencyResolver resolver)
         {
-            return app.Use(new Func<AppFunc, AppFunc>(nextApp => new DependencyMiddleware(nextApp, resolver).Invoke));
+            return app.Use(new Func<AppFunc, AppFunc>(nextApp => new DependencyMiddleware(nextApp, app, resolver).Invoke));
         }
 
         public static IOwinDependencyScope GetRequestDependencyScope(this IDictionary<string, object> environment)
