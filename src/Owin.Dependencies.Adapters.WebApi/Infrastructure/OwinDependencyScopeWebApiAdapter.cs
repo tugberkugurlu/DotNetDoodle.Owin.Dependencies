@@ -5,10 +5,10 @@ using System.Web.Http.Dependencies;
 
 namespace Owin.Dependencies.Adapters.WebApi.Infrastructure
 {
-    public class OwinDependencyScopeWebApiAdapter : IDependencyScope
+    internal class OwinDependencyScopeWebApiAdapter : IDependencyScope
     {
         private bool _disposed;
-        private readonly IOwinDependencyScope _owinDependencyScope;
+        private readonly IServiceProvider _requestContainer;
 
         [SecuritySafeCritical]
         ~OwinDependencyScopeWebApiAdapter()
@@ -16,21 +16,21 @@ namespace Owin.Dependencies.Adapters.WebApi.Infrastructure
             Dispose(false);
         }
 
-        public OwinDependencyScopeWebApiAdapter(IOwinDependencyScope owinDependencyScope)
+        public OwinDependencyScopeWebApiAdapter(IServiceProvider requestContainer)
         {
-            _owinDependencyScope = owinDependencyScope;
+            _requestContainer = requestContainer;
         }
 
         [SecuritySafeCritical]
         public object GetService(Type serviceType)
         {
-            return _owinDependencyScope.GetService(serviceType);
+            return _requestContainer.GetService(serviceType);
         }
 
         [SecuritySafeCritical]
         public IEnumerable<object> GetServices(Type serviceType)
         {
-            return _owinDependencyScope.GetServices(serviceType);
+            return _requestContainer.GetService(typeof(IEnumerable<>).MakeGenericType(serviceType)) as IEnumerable<object>;
         }
 
         [SecuritySafeCritical]
@@ -46,9 +46,9 @@ namespace Owin.Dependencies.Adapters.WebApi.Infrastructure
             {
                 if (disposing)
                 {
-                    if (_owinDependencyScope != null)
+                    if (_requestContainer != null && _requestContainer is IDisposable)
                     {
-                        _owinDependencyScope.Dispose();
+                        (_requestContainer as IDisposable).Dispose();
                     }
                 }
                 _disposed = true;

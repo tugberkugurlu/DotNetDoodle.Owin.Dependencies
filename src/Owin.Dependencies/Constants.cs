@@ -3,6 +3,7 @@ namespace Owin.Dependencies
 {
     public static class Constants
     {
-        public const string OwinDependencyScopeEnvironmentKey = "Owin.DependencyScope";
+        public const string OwinApplicationContainerKey = "container.App";
+        public const string OwinRequestContainerEnvironmentKey = "container.Request";
     }
 }

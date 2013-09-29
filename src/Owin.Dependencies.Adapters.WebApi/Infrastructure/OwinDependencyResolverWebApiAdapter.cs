@@ -5,32 +5,32 @@ using System.Web.Http.Dependencies;
 
 namespace Owin.Dependencies.Adapters.WebApi.Infrastructure
 {
-    public class OwinDependencyResolverWebApiAdapter : IDependencyResolver
+    internal class OwinDependencyResolverWebApiAdapter : IDependencyResolver
     {
-        private readonly IOwinDependencyResolver _owinResolver;
+        private readonly IServiceProvider _appContainer;
 
-        public OwinDependencyResolverWebApiAdapter(IOwinDependencyResolver owinResolver)
+        public OwinDependencyResolverWebApiAdapter(IServiceProvider appContainer)
         {
-            _owinResolver = owinResolver;
+            _appContainer = appContainer;
         }
 
         [SecuritySafeCritical]
         public IDependencyScope BeginScope()
         {
-            IOwinDependencyScope owinScope = _owinResolver.BeginScope();
-            return new OwinDependencyScopeWebApiAdapter(owinScope);
+            IServiceProvider scope = _appContainer.GetService(typeof(IServiceProvider)) as IServiceProvider;
+            return new OwinDependencyScopeWebApiAdapter(scope);
         }
 
         [SecuritySafeCritical]
         public object GetService(Type serviceType)
         {
-            return _owinResolver.GetService(serviceType);
+            return _appContainer.GetService(serviceType);
         }
 
         [SecuritySafeCritical]
         public IEnumerable<object> GetServices(Type serviceType)
         {
-            return _owinResolver.GetServices(serviceType);
+            return _appContainer.GetService(typeof(IEnumerable<>).MakeGenericType(serviceType)) as IEnumerable<object>;
         }
 
         [SecuritySafeCritical]

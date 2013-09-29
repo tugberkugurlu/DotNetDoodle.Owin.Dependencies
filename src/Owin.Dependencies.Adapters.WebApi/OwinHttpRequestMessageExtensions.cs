@@ -7,10 +7,10 @@ namespace System.Net.Http
 {
     internal static class OwinHttpRequestMessageExtensions
     {
-        public static IDependencyScope GetOwinDependencyScope(this HttpRequestMessage request)
+        internal static IDependencyScope GetOwinDependencyScope(this HttpRequestMessage request)
         {
-            IOwinDependencyScope owinDependencyScope = request.GetOwinContext().GetRequestDependencyScope();
-            return new OwinDependencyScopeWebApiAdapter(owinDependencyScope);
+            IServiceProvider requestContainer = request.GetOwinContext().Environment.GetRequestContainer();
+            return new OwinDependencyScopeWebApiAdapter(requestContainer);
         }
     }
 }

@@ -13,14 +13,12 @@ namespace Owin.Dependencies.Sample
         public void Configuration(IAppBuilder app)
         {
             IContainer container = RegisterServices();
-            AutofacOwinDependencyResolver resolver = new AutofacOwinDependencyResolver(container);
-
             HttpConfiguration config = new HttpConfiguration();
             config.Routes.MapHttpRoute("DefaultHttpRoute", "api/{controller}");
 
-            app.UseDependencyResolver(resolver)
+            app.UseAutofacContainer(container)
                .Use<RandomTextMiddleware>()
-               .UseWebApiWithOwinDependencyResolver(resolver, config);
+               .UseWebApiWithContainer(config);
         }
 
         public IContainer RegisterServices()
@@ -28,6 +26,8 @@ namespace Owin.Dependencies.Sample
             ContainerBuilder builder = new ContainerBuilder();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterOwinApplicationContainer();
+
             builder.RegisterType<Repository>()
                    .As<IRepository>()
                    .InstancePerLifetimeScope();

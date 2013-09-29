@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+VisualStudioVersion = 12.0.20827.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies", "src\Owin.Dependencies\Owin.Dependencies.csproj", "{E1E4B973-5577-47C3-8419-F5C7E521A7B7}"
 EndProject
@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{2727EAAC
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.Dependencies.Tests", "tests\Owin.Dependencies.Tests\Owin.Dependencies.Tests.csproj", "{FA7405B6-BCE8-4C17-952D-F833F5D49329}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{D20A708E-6DD0-4E9F-810E-24C43F55A6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D20A708E-6DD0-4E9F-810E-24C43F55A6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D20A708E-6DD0-4E9F-810E-24C43F55A6F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA7405B6-BCE8-4C17-952D-F833F5D49329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7405B6-BCE8-4C17-952D-F833F5D49329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7405B6-BCE8-4C17-952D-F833F5D49329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7405B6-BCE8-4C17-952D-F833F5D49329}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

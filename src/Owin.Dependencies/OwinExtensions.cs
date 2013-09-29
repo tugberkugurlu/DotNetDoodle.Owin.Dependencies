@@ -12,20 +12,21 @@ namespace Owin
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class OwinExtensions
     {
-        public static IAppBuilder UseDependencyResolver(this IAppBuilder app, IOwinDependencyResolver resolver)
+        public static IAppBuilder UseContainer(this IAppBuilder app, IServiceProvider appContainer)
         {
-            return app.Use(new Func<AppFunc, AppFunc>(nextApp => new DependencyMiddleware(nextApp, app, resolver).Invoke));
-        }
-
-        public static IOwinDependencyScope GetRequestDependencyScope(this IDictionary<string, object> environment)
-        {
-            object dependencyScope;
-            if (environment.TryGetValue(Constants.OwinDependencyScopeEnvironmentKey, out dependencyScope))
+            if (app == null)
             {
-                return dependencyScope as IOwinDependencyScope;
+                throw new ArgumentNullException("app");
             }
 
-            return null;
+            if (appContainer == null)
+            {
+                throw new ArgumentNullException("appContainer");
+            }
+
+            app.SetApplicationContainer(appContainer);
+
+            return app.Use(new Func<AppFunc, AppFunc>(nextApp => new ContainerMiddleware(nextApp, app).Invoke));
         }
     }
 }

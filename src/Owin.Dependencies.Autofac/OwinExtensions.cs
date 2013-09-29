@@ -1,15 +1,20 @@
 ﻿using Autofac;
-using Owin.Dependencies.Autofac;
+using System;
 
 namespace Owin
 {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public static class OwinExtensions
     {
-        public static IAppBuilder UseAutofacDependencyResolver(this IAppBuilder app, IContainer container) 
+        public static IAppBuilder UseAutofacContainer(this IAppBuilder app, IContainer container) 
         {
-            AutofacOwinDependencyResolver resolver = new AutofacOwinDependencyResolver(container);
-            return app.UseDependencyResolver(resolver);
+            IServiceProvider appContainer = container as IServiceProvider;
+            if (appContainer == null)
+            {
+                throw new NotSupportedException("An IContainer implementation which doesn't implement IServiceProvider is not supported");
+            }
+
+            return app.UseContainer(appContainer);
         }
     }
 }

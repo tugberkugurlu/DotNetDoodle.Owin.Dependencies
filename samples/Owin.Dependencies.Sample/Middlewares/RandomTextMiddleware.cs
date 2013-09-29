@@ -1,5 +1,6 @@
 ﻿using Microsoft.Owin;
 using Owin.Dependencies.Sample.Repositories;
+using System;
 using System.Threading.Tasks;
 
 namespace Owin.Dependencies.Sample.Middlewares
@@ -13,8 +14,8 @@ namespace Owin.Dependencies.Sample.Middlewares
 
         public override async Task Invoke(IOwinContext context)
         {
-            IOwinDependencyScope dependencyScope = context.GetRequestDependencyScope();
-            IRepository repository = dependencyScope.GetService(typeof(IRepository)) as IRepository;
+            IServiceProvider requestContainer = context.Environment.GetRequestContainer();
+            IRepository repository = requestContainer.GetService(typeof(IRepository)) as IRepository;
 
             if (context.Request.Path == "/random")
             {

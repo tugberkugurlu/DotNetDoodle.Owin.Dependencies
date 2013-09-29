@@ -27,14 +27,12 @@ Install the `Owin.Dependencies.Adapters.WebApi`, `Owin.Dependencies.Autofac` and
         public void Configuration(IAppBuilder app)
         {
             IContainer container = RegisterServices();
-            AutofacOwinDependencyResolver resolver = new AutofacOwinDependencyResolver(container);
-
             HttpConfiguration config = new HttpConfiguration();
             config.Routes.MapHttpRoute("DefaultHttpRoute", "api/{controller}");
 
-            app.UseDependencyResolver(resolver)
+            app.UseAutofacContainer(container)
                .Use<RandomTextMiddleware>()
-               .UseWebApiWithOwinDependencyResolver(resolver, config);
+               .UseWebApiWithContainer(config);
         }
 
         public IContainer RegisterServices()
@@ -42,6 +40,8 @@ Install the `Owin.Dependencies.Adapters.WebApi`, `Owin.Dependencies.Autofac` and
             ContainerBuilder builder = new ContainerBuilder();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterOwinApplicationContainer();
+
             builder.RegisterType<Repository>()
                    .As<IRepository>()
                    .InstancePerLifetimeScope();
@@ -61,8 +61,8 @@ Install the `Owin.Dependencies.Adapters.WebApi`, `Owin.Dependencies.Autofac` and
 
         public override async Task Invoke(IOwinContext context)
         {
-            IOwinDependencyScope dependencyScope = context.GetRequestDependencyScope();
-            IRepository repository = dependencyScope.GetService(typeof(IRepository)) as IRepository;
+            IServiceProvider requestContainer = context.Environment.GetRequestContainer();
+            IRepository repository = requestContainer.GetService(typeof(IRepository)) as IRepository;
 
             if (context.Request.Path == "/random")
             {
