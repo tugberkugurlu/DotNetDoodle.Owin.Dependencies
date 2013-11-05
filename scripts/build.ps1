@@ -1,5 +1,5 @@
 param(
-    $buildFile   = (join-path (Split-Path -parent $MyInvocation.MyCommand.Definition) "Owin.Dependencies.msbuild"),
+    $buildFile   = (join-path (Split-Path -parent $MyInvocation.MyCommand.Definition) "DotNetDoodle.Owin.Dependencies.msbuild"),
     $buildParams = "/p:Configuration=Release",
     $buildTarget = "/t:Default"
 )

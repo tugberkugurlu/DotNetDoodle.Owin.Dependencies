@@ -1,4 +1,4 @@
-Owin.Dependencies
+DotNetDoodle.Owin.Dependencies
 =================
 An IoC container adapter into OWIN pipeline
 
@@ -6,19 +6,19 @@ An IoC container adapter into OWIN pipeline
 
 Core package which includes the interfaces and common extensions:
 
-    PM> Install-Package Owin.Dependencies -pre
+    PM> Install-Package DotNetDoodle.Owin.Dependencies -pre
 
 Autofac IoC container implementation:
 
-    PM> Install-Package Owin.Dependencies.Autofac -pre
+    PM> Install-Package DotNetDoodle.Owin.Dependencies.Autofac -pre
 
 ASP.NET Web API adapter:
 
-    PM> Install-Package Owin.Dependencies.Adapters.WebApi -pre
+    PM> Install-Package DotNetDoodle.Owin.Dependencies.Adapters.WebApi -pre
 
 ## Sample Snippet
 
-Install the `Owin.Dependencies.Adapters.WebApi`, `Owin.Dependencies.Autofac` and `Autofac.WebApi5` NuGet packages.
+Install the `DotNetDoodle.Owin.Dependencies.Adapters.WebApi`, `DotNetDoodle.Owin.Dependencies.Autofac` and `Autofac.WebApi5` NuGet packages.
 
 ### Startup.cs
 
