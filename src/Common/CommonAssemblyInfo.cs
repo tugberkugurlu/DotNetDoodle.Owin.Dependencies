@@ -10,6 +10,6 @@
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyConfiguration("")]
 
-[assembly: AssemblyVersion("0.2.0.0")]
-[assembly: AssemblyFileVersion("0.2.0.0")]
-[assembly: AssemblyInformationalVersion("0.2.0-pre01")]
+[assembly: AssemblyVersion("0.2.1.0")]
+[assembly: AssemblyFileVersion("0.2.1.0")]
+[assembly: AssemblyInformationalVersion("0.2.1-pre01")]

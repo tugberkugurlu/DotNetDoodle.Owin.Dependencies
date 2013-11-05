@@ -17,7 +17,7 @@ namespace DotNetDoodle.Owin.Dependencies.Sample.Middlewares
             IServiceProvider requestContainer = context.Environment.GetRequestContainer();
             IRepository repository = requestContainer.GetService(typeof(IRepository)) as IRepository;
 
-            if (context.Request.Path == "/random")
+            if (context.Request.Path == new PathString("/random"))
             {
                 await context.Response.WriteAsync(repository.GetRandomText());
             }
