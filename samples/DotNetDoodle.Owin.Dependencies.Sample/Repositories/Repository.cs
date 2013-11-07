@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,24 +22,32 @@ namespace DotNetDoodle.Owin.Dependencies.Sample.Repositories
 
         public Repository()
         {
-            Console.WriteLine("Foo constructor");
+            WriteAndAddInfo("Constructor");
         }
 
         public string GetRandomText()
         {
-            Console.WriteLine("Getting the random text");
+            WriteAndAddInfo("Getting the random text");
             return __randomTexts.ElementAt(new Random().Next(__randomTexts.Count()));
         }
 
         public IEnumerable<string> GetTexts()
         {
-            Console.WriteLine("Getting all the texts");
+            WriteAndAddInfo("Getting all the texts");
             return __randomTexts;
         }
 
         public void Dispose()
         {
-            Console.WriteLine("Foo dispose");
+            WriteAndAddInfo("Dispose");
+        }
+
+        private void WriteAndAddInfo(string message)
+        {
+            Console.WriteLine(GetType().ToString() + ": " + message);
+            Startup.TypeOperations.AddOrUpdate(GetType(),
+                (type) => new ConcurrentBag<string>(new[] { message }),
+                (type, bag) => { bag.Add(message); return bag; });
         }
     }
 }

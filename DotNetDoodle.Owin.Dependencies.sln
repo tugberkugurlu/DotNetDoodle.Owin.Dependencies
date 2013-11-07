@@ -38,6 +38,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{2727EAAC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDoodle.Owin.Dependencies.Tests", "tests\DotNetDoodle.Owin.Dependencies.Tests\DotNetDoodle.Owin.Dependencies.Tests.csproj", "{FA7405B6-BCE8-4C17-952D-F833F5D49329}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDoodle.Owin.Dependencies.Integration.Tests", "tests\DotNetDoodle.Owin.Dependencies.Integration.Tests\DotNetDoodle.Owin.Dependencies.Integration.Tests.csproj", "{4EFD327D-3D7A-4B60-B181-F9080AE77A9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{FA7405B6-BCE8-4C17-952D-F833F5D49329}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA7405B6-BCE8-4C17-952D-F833F5D49329}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA7405B6-BCE8-4C17-952D-F833F5D49329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EFD327D-3D7A-4B60-B181-F9080AE77A9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFD327D-3D7A-4B60-B181-F9080AE77A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFD327D-3D7A-4B60-B181-F9080AE77A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFD327D-3D7A-4B60-B181-F9080AE77A9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
