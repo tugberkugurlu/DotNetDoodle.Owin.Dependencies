@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDoodle.Owin.Dependenc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDoodle.Owin.Dependencies.Integration.Tests", "tests\DotNetDoodle.Owin.Dependencies.Integration.Tests\DotNetDoodle.Owin.Dependencies.Integration.Tests.csproj", "{4EFD327D-3D7A-4B60-B181-F9080AE77A9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDoodle.Owin.Dependencies.Sample.MultiTenant", "samples\DotNetDoodle.Owin.Dependencies.Sample.MultiTenant\DotNetDoodle.Owin.Dependencies.Sample.MultiTenant.csproj", "{059A06AE-09C0-43D5-BB28-847E0F2D3038}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,10 @@ Global
 		{4EFD327D-3D7A-4B60-B181-F9080AE77A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EFD327D-3D7A-4B60-B181-F9080AE77A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EFD327D-3D7A-4B60-B181-F9080AE77A9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{059A06AE-09C0-43D5-BB28-847E0F2D3038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{059A06AE-09C0-43D5-BB28-847E0F2D3038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{059A06AE-09C0-43D5-BB28-847E0F2D3038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{059A06AE-09C0-43D5-BB28-847E0F2D3038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,5 +87,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{01D9AD77-F714-4686-8C78-FE6443C4A139} = {A6BBFA69-5E95-4284-8E5B-B0CB28644F61}
 		{D20A708E-6DD0-4E9F-810E-24C43F55A6F3} = {A6BBFA69-5E95-4284-8E5B-B0CB28644F61}
+		{059A06AE-09C0-43D5-BB28-847E0F2D3038} = {A6BBFA69-5E95-4284-8E5B-B0CB28644F61}
 	EndGlobalSection
 EndGlobal
