@@ -1,7 +1,6 @@
-﻿using Microsoft.Owin;
-using DotNetDoodle.Owin.Dependencies;
-using DotNetDoodle.Owin.Dependencies.Adapters.WebApi.Infrastructure;
+﻿using DotNetDoodle.Owin.Dependencies.Adapters.WebApi.Infrastructure;
 using System.Web.Http.Dependencies;
+using Owin;
 
 namespace System.Net.Http
 {

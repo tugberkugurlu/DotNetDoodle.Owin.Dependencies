@@ -7,7 +7,9 @@ namespace DotNetDoodle.Owin.Dependencies.Sample.Repositories
 {
     public class Repository : IRepository
     {
-        private static IEnumerable<string> __randomTexts = new List<string> 
+        private readonly RequestHandler _requestHandler;
+
+        private static readonly IEnumerable<string> RandomTexts = new List<string> 
         {
             "Yes! This is my favorite sound in the whole world",
             "Excellent. Don't hold back!",
@@ -20,21 +22,23 @@ namespace DotNetDoodle.Owin.Dependencies.Sample.Repositories
             "What a stinker. The paint is coming off the walls"
         };
 
-        public Repository()
+        public Repository(RequestHandler requestHandler)
         {
+            if (requestHandler == null) throw new ArgumentNullException("requestHandler");
+            _requestHandler = requestHandler;
             WriteAndAddInfo("Constructor");
         }
 
         public string GetRandomText()
         {
             WriteAndAddInfo("Getting the random text");
-            return __randomTexts.ElementAt(new Random().Next(__randomTexts.Count()));
+            return RandomTexts.ElementAt(new Random().Next(RandomTexts.Count()));
         }
 
         public IEnumerable<string> GetTexts()
         {
             WriteAndAddInfo("Getting all the texts");
-            return __randomTexts;
+            return RandomTexts;
         }
 
         public void Dispose()

@@ -2,6 +2,7 @@
 using DotNetDoodle.Owin.Dependencies.Sample.MultiTenant.Repositories;
 using System;
 using System.Threading.Tasks;
+using Owin;
 
 namespace DotNetDoodle.Owin.Dependencies.Sample.MultiTenant.Middlewares
 {

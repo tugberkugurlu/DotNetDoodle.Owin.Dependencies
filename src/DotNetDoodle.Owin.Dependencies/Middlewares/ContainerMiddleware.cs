@@ -25,6 +25,8 @@ namespace DotNetDoodle.Owin.Dependencies.Middlewares
         {
             using (IDisposable scope = env.SetRequestContainer(_app))
             {
+                Action<Func<IServiceProvider, Tuple<Type, object>>> registrationAction = env.GetRuntimeRegistrationDelegate();
+                registrationAction(requestScope => Tuple.Create(typeof(IDictionary<string, object>), (object)env));
                 await _nextFunc(env);
             }
         }
