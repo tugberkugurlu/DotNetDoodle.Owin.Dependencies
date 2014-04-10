@@ -4,7 +4,6 @@ using Autofac.Integration.WebApi;
 using DotNetDoodle.Owin.Dependencies.Autofac;
 using DotNetDoodle.Owin.Dependencies.Sample.MultiTenant.Middlewares;
 using DotNetDoodle.Owin.Dependencies.Sample.MultiTenant.Repositories;
-using Microsoft.Owin.Security.Basic;
 using Owin;
 using System;
 using System.Collections.Concurrent;
